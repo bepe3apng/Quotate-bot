@@ -15,10 +15,11 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
-    PaintBox1: TPaintBox;
+    Image1:TImage  ;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormOnShow  (Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+
 
 
 
@@ -39,27 +40,28 @@ implementation
 { TForm1 }
 
 
-
 procedure TForm1.FormCreate(Sender: TObject);
+
 begin
-
-end;
-
-procedure TForm1.FormOnShow(Sender: TObject);
-begin
-
+  image1.Canvas.Brush.Color := clblack;
+  image1.Canvas.Brush.Style := bsSolid;
+  image1.Canvas.rectangle(0,0,500,300);
+  image1.Canvas.FloodFill(100,100,clblack,fsSurface);
+  image1.Canvas.Font.Color:=clwhite;
+  image1.Canvas.Font.size:=25;
+  image1.Canvas.Font.Name:='Montserrat';
+  image1.Canvas.TextOut(75,15,'цитаты великих людей');
+  image1.Canvas.TextOut(60,60,'lfopjsfiops');
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  PaintBox1.Canvas.Brush.Color := clblack;
-  PaintBox1.Canvas.Brush.Style := bsSolid;
-  PaintBox1.Canvas.rectangle(0,0,500,300);
-  PaintBox1.Canvas.FloodFill(100,100,clblack,fsSurface);
-  paintbox1.Canvas.Font.Color:=clwhite;
-  paintbox1.Canvas.Font.size:=25;
-  paintbox1.Canvas.Font.Name:='Montserrat';
-  paintbox1.Canvas.TextOut(50,15,edit1.text);
+  clipboard.Assign(image1.Picture);
+end;
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+
 end;
 
 end.

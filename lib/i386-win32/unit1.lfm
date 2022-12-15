@@ -10,19 +10,13 @@ object Form1: TForm1
   OnCreate = FormCreate
   LCLVersion = '2.2.4.0'
   object Button1: TButton
-    Left = 752
+    Left = 632
     Height = 25
-    Top = 344
+    Top = 40
     Width = 75
     Caption = 'Button1'
     OnClick = Button1Click
     TabOrder = 0
-  end
-  object PaintBox1: TPaintBox
-    Left = 8
-    Height = 310
-    Top = 8
-    Width = 609
   end
   object Edit1: TEdit
     Left = 632
@@ -38,5 +32,11 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 1
     Text = 'цитаты великих людей'
+  end
+  object Image1: TImage
+    Left = 8
+    Height = 310
+    Top = 8
+    Width = 609
   end
 end

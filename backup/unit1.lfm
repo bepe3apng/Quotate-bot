@@ -1,10 +1,10 @@
 object Form1: TForm1
   Left = 532
-  Height = 833
+  Height = 831
   Top = 145
   Width = 1098
   Caption = 'Form1'
-  ClientHeight = 833
+  ClientHeight = 831
   ClientWidth = 1098
   Color = clForm
   OnCreate = FormCreate
@@ -31,11 +31,10 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    Text = 'цитаты великих людей'
   end
   object Image1: TImage
     Left = 8
-    Height = 310
+    Height = 416
     Top = 8
     Width = 609
   end

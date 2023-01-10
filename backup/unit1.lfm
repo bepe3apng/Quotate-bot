@@ -29,6 +29,7 @@ object Form1: TForm1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
+    OnEnter = Button1Click
     ParentFont = False
     TabOrder = 1
   end

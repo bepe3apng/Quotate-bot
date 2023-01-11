@@ -1,25 +1,26 @@
 object Form1: TForm1
   Left = 532
-  Height = 831
+  Height = 307
   Top = 145
-  Width = 1098
+  Width = 739
   Caption = 'Form1'
-  ClientHeight = 831
-  ClientWidth = 1098
+  ClientHeight = 307
+  ClientWidth = 739
   Color = clForm
   OnCreate = FormCreate
   LCLVersion = '2.2.4.0'
   object Button1: TButton
-    Left = 632
+    Left = 520
     Height = 25
-    Top = 40
-    Width = 75
-    Caption = 'Button1'
+    Top = 88
+    Width = 108
+    AutoSize = True
+    Caption = 'Создать цитату'
     OnClick = Button1Click
     TabOrder = 0
   end
   object Edit1: TEdit
-    Left = 632
+    Left = 520
     Height = 26
     Top = 8
     Width = 212
@@ -29,14 +30,23 @@ object Form1: TForm1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    OnEnter = Button1Click
     ParentFont = False
     TabOrder = 1
+    Text = 'Текст цитаты'
   end
   object Image1: TImage
     Left = 8
-    Height = 416
+    Height = 250
     Top = 8
-    Width = 609
+    Width = 500
+  end
+  object Edit2: TEdit
+    Left = 520
+    Height = 26
+    Top = 48
+    Width = 212
+    AutoSize = False
+    TabOrder = 2
+    Text = 'Автор'
   end
 end

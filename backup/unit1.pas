@@ -15,10 +15,12 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Image1:TImage  ;
     procedure Button1Click(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
 
     procedure FormCreate(Sender: TObject);
 
@@ -50,8 +52,9 @@ begin
   image1.Canvas.FloodFill(100,100,clblack,fsSurface);
   image1.Canvas.Font.Color:=clwhite;
   image1.Canvas.Font.size:=16;
-  image1.Canvas.Font.Name:='arial';
 
+    ComboBox1.Items := Screen.Fonts;
+ComboBox1.ItemIndex := 0;
 end;
 
 
@@ -119,6 +122,11 @@ tex := TBGRABitmap.Create(image1.picture.bitmap);
  clipboard.Assign(Bitmap);
 Deletefile('bepe3aquotate.bmp');
 Deletefile('bepe3a.png');
+end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+image1.Canvas.Font.Name:=ComboBox1.Items[ComboBox1.ItemIndex];
 end;
 
 

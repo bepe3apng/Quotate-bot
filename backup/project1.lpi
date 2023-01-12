@@ -5,7 +5,7 @@
     <PathDelim Value="\"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
-      <Title Value="project1"/>
+      <Title Value="цитатник"/>
       <Scaled Value="True"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
@@ -16,9 +16,9 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <BuildNr Value="1"/>
+      <RevisionNr Value="3"/>
       <Language Value="0419"/>
-      <Attributes pvaPreRelease="True"/>
+      <CharSet Value="04B0"/>
       <StringTable CompanyName="bepe3a.png"/>
     </VersionInfo>
     <BuildModes>
@@ -76,6 +76,7 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="False"/>
         <DebugInfoType Value="dsDwarf2Set"/>
       </Debugging>
       <LinkSmart Value="True"/>

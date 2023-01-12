@@ -3,7 +3,7 @@ object Form1: TForm1
   Height = 307
   Top = 145
   Width = 739
-  Caption = 'тот'
+  Caption = 'Цитатник'
   ClientHeight = 307
   ClientWidth = 739
   Color = clForm

@@ -59,12 +59,13 @@ end;
 
 
 procedure TForm1.Button1Click(Sender: TObject);
-var s,s1,s3,wois:string;
+var s,s1,s3,wois,tmp:string;
 var a,s2:array of string;
 var j,i,len,x,y:integer;
 var temp,tex,mask: TBGRABitmap;
     Bitmap: TBitmap;
 begin
+image1.canvas.Clear;
   i:=0;
   j:=0;
   s:=edit1.text;
@@ -72,7 +73,7 @@ begin
  len:=length (s) div 25;
  setlength(s2,len);
  while j<(length(a)-1) do begin
-   while (length (s2[i]))<30 do begin
+   while (length (s2[i]))<40 do begin
    s2[i]:=s2[i]+' '+a[j];
    if j=length(a)-1 then break;
    inc(j);
@@ -87,18 +88,17 @@ for i:=0 to len-1 do begin
 image1.Canvas.TextOut(x,y,s2[i]);
 y:=y+25;
 end;
-
+tmp:=GetEnvironmentVariable('temp');
 wois:='©'+' '+edit2.text;
 image1.Canvas.TextOut(100,180,wois);
 
 Bitmap:=TBitmap.Create;
 Bitmap.LoadFromClipboardFormat(CF_BITMAP);
-bitmap.SaveToFile('bepe3a.png');
+bitmap.SaveToFile(tmp+'/bepe3a.bmp');
 temp:= TBGRABitmap.Create(180,360);
  //loading and scaling texture
- tex := TBGRABitmap.Create('bepe3a.png');
+ tex := TBGRABitmap.Create(tmp+'/bepe3a.bmp');
  BGRAReplace(tex,tex.Resample(50,50));
-
  //create a mask with ellipse and rectangle
  mask := TBGRABitmap.Create(180,360,BGRABlack);
  mask.FillEllipseAntialias(20,20,20,20,BGRAWhite);
@@ -116,12 +116,13 @@ temp:= TBGRABitmap.Create(180,360);
  temp.Free;
 tex := TBGRABitmap.Create(image1.picture.bitmap);
  BGRAReplace(tex,tex.Resample(1000,500));
- tex.SaveToFile('bepe3aquotate.bmp');
+ tex.SaveToFile(tmp+'/bepe3aquotate.bmp');
  Bitmap:=TBitmap.Create;
- Bitmap.LoadFromFile('bepe3aquotate.bmp');
+ Bitmap.LoadFromFile(tmp+'/bepe3aquotate.bmp');
  clipboard.Assign(Bitmap);
-Deletefile('bepe3aquotate.bmp');
-Deletefile('bepe3a.png');
+Deletefile(tmp+'/bepe3aquotate.bmp');
+Deletefile(tmp+'/bepe3a.bmp');
+
 end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);

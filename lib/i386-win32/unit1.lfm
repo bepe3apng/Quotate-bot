@@ -59,4 +59,12 @@ object Form1: TForm1
     TabOrder = 3
     Text = 'Шрифт'
   end
+  object Label1: TLabel
+    Left = 520
+    Height = 30
+    Top = 152
+    Width = 188
+    Caption = 'Аватар автора должен находиться'#13#10'в буфере обмена '
+    ParentColor = False
+  end
 end

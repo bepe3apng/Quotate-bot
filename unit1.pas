@@ -19,6 +19,7 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     Image1:TImage  ;
+    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
 
@@ -131,4 +132,3 @@ end;
 
 
 end.
-

@@ -48,13 +48,11 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   image1.Canvas.Brush.Color := clblack;
   image1.Canvas.Brush.Style := bsSolid;
-
   image1.Canvas.FloodFill(100,100,clblack,fsSurface);
   image1.Canvas.Font.Color:=clwhite;
   image1.Canvas.Font.size:=16;
-
-    ComboBox1.Items := Screen.Fonts;
-ComboBox1.ItemIndex := 0;
+  ComboBox1.Items := Screen.Fonts;
+  ComboBox1.ItemIndex := 0;
 end;
 
 
@@ -84,13 +82,13 @@ image1.canvas.Clear;
  image1.Canvas.TextOut(150,15,'Цитаты великих людей');
  x:=55;
  y:=60;
-for i:=0 to len-1 do begin
-image1.Canvas.TextOut(x,y,s2[i]);
-y:=y+25;
-end;
-tmp:=GetEnvironmentVariable('temp');
-wois:='©'+' '+edit2.text;
-image1.Canvas.TextOut(100,180,wois);
+ for i:=0 to len-1 do begin
+ image1.Canvas.TextOut(x,y,s2[i]);
+ y:=y+25;
+ end;
+ tmp:=GetEnvironmentVariable('temp');
+ wois:='©'+' '+edit2.text;
+ image1.Canvas.TextOut(100,180,wois);
 
 Bitmap:=TBitmap.Create;
 Bitmap.LoadFromClipboardFormat(CF_BITMAP);
